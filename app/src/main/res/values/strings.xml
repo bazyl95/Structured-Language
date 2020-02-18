@@ -3,7 +3,7 @@
     <string-array name="topics">
         <item>Rīts</item>
         <item>Brokastis</item>
-        <item>Gerbšanas</item>
+        <item>Ģērbšanas</item>
         <item>Pastaiga</item>
         <item>Skola</item>
         <item>Pecpusdiena</item>
@@ -15,19 +15,20 @@
         <item>Saruna</item>
         <item>Iedrošinajums</item>
     </string-array>
-    <string name="rits01">LABRIT!</string>
-    <string name="rits02">LAIKS CELTIES.</string>
-    <string name="rits03">KUR TUALETE?</string>
-    <string name="rits04">TE TUALETE.</string>
-    <string name="rits05">EJAM UZ VANNAS ISTABU!</string>
-    <string name="rits06">RE KUR  IZLIETNE.</string>
-    <string name="rits07">ATVERAM KRĀNU.</string>
-    <string name="rits08">TEK ŪDENS.</string>
-    <string name="rits19">MAZGĀYAM MUTI</string>
-    <string name="rits10">KUR DVIELIS?</string>
-    <string name="rits11">TE DVIELIS!</string>
-    <string name="rits12">SLAUKĀM ROKAS.</string>
-
+    <string-array name="rits">
+        <item>LABRIT!</item>
+        <item>LAIKS CELTIES.</item>
+        <item>KUR TUALETE?</item>
+        <item>TE TUALETE.</item>
+        <item>EJAM UZ VANNAS ISTABU!</item>
+        <item>RE KUR  IZLIETNE.</item>
+        <item>ATVERAM KRĀNU.</item>
+        <item>TEK ŪDENS.</item>
+        <item>MAZGĀYAM MUTI</item>
+        <item>KUR DVIELIS?</item>
+        <item>TE DVIELIS!</item>
+        <item>SLAUKĀM ROKAS.</item>
+    </string-array>
 
     <string name="brokastis01">EJAM BROKASTĪS!.</string>
     <string name="brokastis02">SKATIES - KAS KRŪZĒ?</string>
@@ -168,8 +169,4 @@
     <string name="iedrosinajums06">DROŠI,SKAĻĀK.</string>
     <string name="iedrosinajums07">NAV VĒRTS BAIDĪTIES!</string>
     <string name="iedrosinajums08">NEBAIDIES!</string>
-
-
-
-
 </resources>
