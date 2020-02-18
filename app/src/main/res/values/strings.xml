@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android_STRL</string>
+    <string-array name="topics">
+        <item>TOPIC1</item>
+        <item>TOPIC2</item>
+        <item>TOPIC3</item>
+    </string-array>
 </resources>
