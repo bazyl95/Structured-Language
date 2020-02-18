@@ -1,6 +1,7 @@
 package com.example.android_strl.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,14 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<TopicRecycler
     @NonNull
     @Override
     public TopicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.topic_list_item, parent, false);
-        TopicViewHolder vh = new TopicViewHolder(view);
-        return vh;
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.topic_list_item, parent, false);
+        return new TopicViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TopicViewHolder holder, int position) {
+        Log.d("Adapter_TAG", topics.get(position));
         holder.mTopicName.setText(topics.get(position));
     }
 

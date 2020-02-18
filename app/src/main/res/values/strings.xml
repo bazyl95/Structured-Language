@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">Android_STRL</string>
+    <string-array name="topics">
+        <item>Rīts</item>
+        <item>Brokastis</item>
+        <item>Gerbšanas</item>
+        <item>Pastaiga</item>
+        <item>Skola</item>
+        <item>Pecpusdiena</item>
+        <item>Spēles</item>
+        <item>Vakars</item>
+        <item>Jauna diena</item>
+        <item>Pec skolas</item>
+        <item>Likumi</item>
+        <item>Saruna</item>
+        <item>Iedrošinajums</item>
+    </string-array>
     <string name="rits01">LABRIT!</string>
     <string name="rits02">LAIKS CELTIES.</string>
     <string name="rits03">KUR TUALETE?</string>
@@ -12,6 +27,7 @@
     <string name="rits10">KUR DVIELIS?</string>
     <string name="rits11">TE DVIELIS!</string>
     <string name="rits12">SLAUKĀM ROKAS.</string>
+
 
     <string name="brokastis01">EJAM BROKASTĪS!.</string>
     <string name="brokastis02">SKATIES - KAS KRŪZĒ?</string>
@@ -144,14 +160,14 @@
     <string name="saruna07">TU ESI DUSMĪGS?</string>
     <string name="saruna08">BEIDZAM RAUDĀT, NOMIERINIES!</string>
 
-    <string name="iedrosinagums01">GATAVOJIES BEIGT</string>
-    <string name="iedrosinagums02">SILTU VAI AUKSTU DZĒRIENU?</string>
-    <string name="iedrosinagums03">PEĻĶĒ NEKĀP.</string>
-    <string name="iedrosinagums04">DZIEDAM DZIESMU.</string>
-    <string name="iedrosinagums05">SKAITAM DZEJOLI.</string>
-    <string name="iedrosinagums06">DROŠI,SKAĻĀK.</string>
-    <string name="iedrosinagums07">NAV VĒRTS BAIDĪTIES!</string>
-    <string name="iedrosinagums08">NEBAIDIES!</string>
+    <string name="iedrosinajums01">GATAVOJIES BEIGT</string>
+    <string name="iedrosinajums02">SILTU VAI AUKSTU DZĒRIENU?</string>
+    <string name="iedrosinajums03">PEĻĶĒ NEKĀP.</string>
+    <string name="iedrosinajums04">DZIEDAM DZIESMU.</string>
+    <string name="iedrosinajums05">SKAITAM DZEJOLI.</string>
+    <string name="iedrosinajums06">DROŠI,SKAĻĀK.</string>
+    <string name="iedrosinajums07">NAV VĒRTS BAIDĪTIES!</string>
+    <string name="iedrosinajums08">NEBAIDIES!</string>
 
 
 

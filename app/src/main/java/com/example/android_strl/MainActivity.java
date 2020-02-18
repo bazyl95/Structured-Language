@@ -1,6 +1,7 @@
 package com.example.android_strl;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listOfTopics = getTopics(getResources().getStringArray(R.array.topics));
-
         // Initialize recyclerView
         mRecyclerViewTopics = findViewById(R.id.recyclerViewTopics);
         // Configuring setting that it will be fixed size list
@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
         lm = new LinearLayoutManager(this);
         mRecyclerViewTopics.setLayoutManager(lm);
         mAdapter = new TopicRecyclerViewAdapter(listOfTopics);
+        mRecyclerViewTopics.setAdapter(mAdapter);
+        mRecyclerViewTopics.addItemDecoration(new DividerItemDecoration(mRecyclerViewTopics.getContext(), LinearLayoutManager.VERTICAL));
     }
 
     private List<String> getTopics(String[] topics) {
         List<String> listForReturn = new ArrayList<>();
-        for (int i = 0; i < topics.length; i++) {
-            listForReturn.add(topics[i]);
+        for (String topic : topics) {
+            listForReturn.add(topic);
         }
         return listForReturn;
     }
