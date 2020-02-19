@@ -10,6 +10,7 @@ import android.os.Bundle;
 import com.example.android_strl.Adapters.TopicRecyclerViewAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,24 +23,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listOfTopics = getTopics(getResources().getStringArray(R.array.topics));
+        listOfTopics = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.topics)));
         // Initialize recyclerView
         mRecyclerViewTopics = findViewById(R.id.recyclerViewTopics);
-        // Configuring setting that it will be fixed size list
+        // Configuring flag that it will be fixed size list
         mRecyclerViewTopics.setHasFixedSize(true);
-        // Initializing LayoutManager
+        // Initializing LayoutManager and custom adapter for RecyclerView
         lm = new LinearLayoutManager(this);
-        mRecyclerViewTopics.setLayoutManager(lm);
         mAdapter = new TopicRecyclerViewAdapter(listOfTopics);
+        // assigning LayoutManager and Adapter to RecyclerView
+        mRecyclerViewTopics.setLayoutManager(lm);
         mRecyclerViewTopics.setAdapter(mAdapter);
+        // Adding separator between items in list
         mRecyclerViewTopics.addItemDecoration(new DividerItemDecoration(mRecyclerViewTopics.getContext(), LinearLayoutManager.VERTICAL));
     }
 
-    private List<String> getTopics(String[] topics) {
-        List<String> listForReturn = new ArrayList<>();
-        for (String topic : topics) {
-            listForReturn.add(topic);
-        }
-        return listForReturn;
-    }
 }

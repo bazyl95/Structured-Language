@@ -6,14 +6,14 @@
         <item>Ģērbšanas</item>
         <item>Pastaiga</item>
         <item>Skola</item>
-        <item>Pecpusdiena</item>
+        <item>Pēcpusdiena</item>
         <item>Spēles</item>
         <item>Vakars</item>
         <item>Jauna diena</item>
-        <item>Pec skolas</item>
+        <item>Pēc skolas</item>
         <item>Likumi</item>
         <item>Saruna</item>
-        <item>Iedrošinajums</item>
+        <item>Iedrošinājums</item>
     </string-array>
     <string-array name="rits">
         <item>LABRIT!</item>
@@ -24,149 +24,156 @@
         <item>RE KUR  IZLIETNE.</item>
         <item>ATVERAM KRĀNU.</item>
         <item>TEK ŪDENS.</item>
-        <item>MAZGĀYAM MUTI</item>
+        <item>MAZGĀJAM MUTI</item>
         <item>KUR DVIELIS?</item>
         <item>TE DVIELIS!</item>
         <item>SLAUKĀM ROKAS.</item>
     </string-array>
-
-    <string name="brokastis01">EJAM BROKASTĪS!.</string>
-    <string name="brokastis02">SKATIES - KAS KRŪZĒ?</string>
-    <string name="brokastis03">DZĒRIENS.</string>
-    <string name="brokastis04">BĻODA.</string>
-    <string name="brokastis05">KAS BĻODA?</string>
-    <string name="brokastis06">TUKŠS.</string>
-    <string name="brokastis07">KAROTE.</string>
-    <string name="brokastis08">TE KATLS.</string>
-    <string name="brokastis09">KATLĀ PUTRA.</string>
-    <string name="brokastis10">MAIZE UZ ŠĶĪVJA.</string>
-    <string name="brokastis11">ĒDĪSI MAIZI?</string>
-    <string name="brokastis12">SAKI-JĀ VAI NĒ.</string>
-    <string name="brokastis13">KUR IZLIETNE?</string>
-    <string name="brokastis14">RE KUR IZLIETNE!</string>
-    <string name="brokastis15">MAZGĀJAM ROKAS.</string>
-    <string name="brokastis16">SKATIES - DVIELIS</string>
-
-    <string name="gerbsanas01">VELKAM APAKŠBIKSES.</string>
-    <string name="gerbsanas02">VELKAM APAKŠKREKLIŅU.</string>
-    <string name="gerbsanas03">VELKAM KREKLU.</string>
-    <string name="gerbsanas04">VELKAM BIKSES.</string>
-    <string name="gerbsanas05">VELKAM SVĀRKUS.</string>
-    <string name="gerbsanas06">VELKAM BLŪZI</string>
-    <string name="gerbsanas07">VELKAM ZEĶBIKSES.</string>
-    <string name="gerbsanas08">VELKAM ZEĶES.</string>
-    <string name="gerbsanas09">ĻOTI LABI!</string>
-    <string name="gerbsanas10">ESMU GATAVS</string>
-
-    <string name="pastaiga01">DOD ROKU,KĀPJAM LEJĀ!</string>
-    <string name="pastaiga02">ES JŪTU,VĒJŠ PŪŠ.</string>
-    <string name="pastaiga03">KĀPJAM AUTOMAŠĪNĀ.</string>
-    <string name="pastaiga04">SĒDIES!</string>
-    <string name="pastaiga05">SKATIES PA LOGU!</string>
-    <string name="pastaiga06">RE KĀDS PUTNS LIDO!</string>
-    <string name="pastaiga07">BRAUCAM.</string>
-    <string name="pastaiga08">SKATIES AUTOBUSS!</string>
-    <string name="pastaiga09">SKATIES UGUNSDZĒSĒJS¹</string>
-    <string name="pastaiga10">SKATIES PARKS!</string>
-    <string name="pastaiga11">SKATIES MIKROAUTOBUSS!</string>
-    <string name="pastaiga12">KĀPSIM ĀRĀ.</string>
-    <string name="pastaiga13">IESIM UZ SKOLU.</string>
-
-    <string name="skola01">EJAM UZ SKOLU.</string>
-    <string name="skola02">KĀPJAM AUGŠĀ!</string>
-    <string name="skola03">TE GARDEROBE, TE TAVS SKAPIS.</string>
-    <string name="skola04">TE PAKARAMAIS.</string>
-    <string name="skola05">NOVELKAM ZĀBAKUS,JAKU.</string>
-    <string name="skola06">DRĒBES PAKARAM SKAPĪ.</string>
-    <string name="skola07">ZĀBAKUS NOLIEKAM SKAPĪ.</string>
-    <string name="skola08">UZVELC SANDALES.</string>
-    <string name="skola09">SKATIES - KABATLAKATS KABATĀ!</string>
-    <string name="skola10">SOMU ŅEM LĪDZI.</string>
-    <string name="skola11">IEKLASUSIES KĀRTĪGĪ, KO SKOLOTAJA SAKA!</string>
-
-
-    <string name="pecpusdiena01">NOVELKAM JAKU.</string>
-    <string name="pecpusdiena02">SKATIES, BIKSES NETĪRAS! (TĀDAS NEVAR VILKT.)</string>
-    <string name="pecpusdiena03">MAZGĀSIM.</string>
-    <string name="pecpusdiena04">TAD VARĒS VILKT.</string>
-    <string name="pecpusdiena05">EJAM ĒST!</string>
-    <string name="pecpusdiena06">SĒDI PIE GALDA.</string>
-    <string name="pecpusdiena07">SKATIES - KRĒSLS PIE GALDA.</string>
-    <string name="pecpusdiena08">skaties, šķīvis uz galda.</string>
-    <string name="pecpusdiena09">UZ GALDA KRĒJUMS, KARTUPEĻI, GURĶI, BIEZPIENS.</string>
-    <string name="pecpusdiena10">KARTUPEĻUS ĒDĪSI?</string>
-    <string name="pecpusdiena11">SAKI JĀ,VAI NĒ.</string>
-    <string name="pecpusdiena12">KRĒJUMU VAJAG?</string>
-    <string name="pecpusdiena13">GURĶUS ĒDĪSI?</string>
-    <string name="pecpusdiena14">BIEZPIENU ĒDĪSI?</string>
-    <string name="pecpusdiena15">GAĻU ĒDĪSI?</string>
-    <string name="pecpusdiena16">VAI TEV GARŠO?</string>
-    <string name="pecpusdiena17">JĀ,MAN GARŠO.</string>
-
-
-    <string name="speles01">VARDE.</string>
-    <string name="speles02">VARDE LEC.</string>
-    <string name="speles03">KAKIS.</string>
-    <string name="speles04">KAĶIS ĒD PIENU.</string>
-    <string name="speles05">NĒ, KAĶIS DZER PIENU.</string>
-    <string name="speles06">KO DZER KAĶIS?</string>
-    <string name="speles07">EJAM MAZGĀT ZOBUS! </string>
-    <string name="speles08">LUDZU, ZOBUBIRSTE.</string>
-    <string name="speles09">LŪDZU, ZOBUPASTA.</string>
-    <string name="speles10">LŪDZU KRŪZE.</string>
-    <string name="speles11">DIVI TĒLI SASKRIENĀS.</string>
-    <string name="speles12">PIEDOD!</string>
-
-    <string name="vakars01">LAIKS IET GULĒT.</string>
-    <string name="vakars02">EjAM GULĒT!</string>
-    <string name="vakars03">BUČA!</string>
-    <string name="vakars04">AR LABU NAKTI!</string>
-
-
-    <string name="jauna_diena01">LAIKS CELTIES!</string>
-    <string name="jauna_diena02">ES BRAUKŠU UZ DARBU, BET TU UZ DĀRZIŅU.</string>
-    <string name="jauna_diena03">ĢĒRBJAMIES - APAKŠBIKSES,APAKŠKREKLS,KREKLS,ZEĶiTES.</string>
-    <string name="jauna_diena04">BIKSES SLAPJAS?</string>
-    <string name="jauna_diena05">VAKAR SLAPJAS, ŠODIEN SAUSAS,</string>
-    <string name="jauna_diena06">SKATIES!</string>
-    <string name="jauna_diena07">VELKAM BIKSES!</string>
-    <string name="jauna_diena08">BRAUCAM UZ DĀRZIŅU!</string>
-
-    <string name="pec_skolas01">KO TU MĀCĪJIES?</string>
-    <string name="pec_skolas02">ĢĒRBIES.</string>
-    <string name="pec_skolas03">VISPIRMS IESIM UZ VEIKALU.</string>
-    <string name="pec_skolas04">VISPIRMS AIZBRAUKSIM UZ VEIKALU, TAD UZ MĀJU.</string>
-    <string name="pec_skolas05">BRAUKSIM UZ MAZO VEIKALU.</string>
-
-
-
-    <string name="likumi01">KĀPJAM MAŠĪNĀ.</string>
-    <string name="likumi02">TĀ NĒ!</string>
-    <string name="likumi03">TU PAJAUTĀ MAN, VAI DRĪKST TO POGU SPIEST!</string>
-    <string name="likumi04">EJAM VEIKALĀ, PIRKSIM PIENU, SVIESTU UN MAIZI.</string>
-    <string name="likumi05">MANTAS ŠOREIZ NĒ!</string>
-    <string name="likumi06">ES NEGRIBU IET PIE LOGOPĒDA.</string>
-    <string name="likumi07">PIE LOGOPĒDA IR JĀIET OBLIGĀTI.</string>
-    <string name="likumi08">TU PALIKSI UZ IELAS?</string>
-    <string name="likumi09">TU MĀCIES VĀRDUS PIE LOGOPĒDA, ES MĀCOS DARBĀ.</string>
-    <string name="likumi10">JA TU LABI STRĀDĀSI PIE LOGOPĒDA, TAD NOPIRKŠU TEV PĀRSTEIGUMU!</string>
-    <string name="likumi11">TAS JĀDARA OBLIGĀTI.</string>
-
-    <string name="saruna01">KAMĒR TU BŪSI DĀRZIŅĀ, ES BŪŠU DARBĀ.</string>
-    <string name="saruna02">NEDĪDIES!</string>
-    <string name="saruna03">SĒDI MIERĪGI!</string>
-    <string name="saruna04">VELKAM SANDALES.</string>
-    <string name="saruna05">KLASUSIES  AR AUSĪM, KO ES TEV SAKU!</string>
-    <string name="saruna06">TU ESI SATRAUCIES?</string>
-    <string name="saruna07">TU ESI DUSMĪGS?</string>
-    <string name="saruna08">BEIDZAM RAUDĀT, NOMIERINIES!</string>
-
-    <string name="iedrosinajums01">GATAVOJIES BEIGT</string>
-    <string name="iedrosinajums02">SILTU VAI AUKSTU DZĒRIENU?</string>
-    <string name="iedrosinajums03">PEĻĶĒ NEKĀP.</string>
-    <string name="iedrosinajums04">DZIEDAM DZIESMU.</string>
-    <string name="iedrosinajums05">SKAITAM DZEJOLI.</string>
-    <string name="iedrosinajums06">DROŠI,SKAĻĀK.</string>
-    <string name="iedrosinajums07">NAV VĒRTS BAIDĪTIES!</string>
-    <string name="iedrosinajums08">NEBAIDIES!</string>
+    <string-array name="brokastis">
+        <item>EJAM BROKASTĪS!.</item>
+        <item>SKATIES- KAS KRŪZĒ?</item>
+        <item>DZĒRIENS.</item>
+        <item>BĻODA.</item>
+        <item>KAS BĻODA?</item>
+        <item>TUKŠS.</item>
+        <item>KAROTE.</item>
+        <item>TE KATLS.</item>
+        <item>KATLĀ PUTRA.</item>
+        <item>MAIZE UZ ŠĶĪVJA.</item>
+        <item>ĒDĪSI MAIZI?</item>
+        <item>SAKI- JĀ VAI NĒ.</item>
+        <item>KUR IZLIETNE?</item>
+        <item>RE KUR IZLIETNE!</item>
+        <item>MAZGĀJAM ROKAS.</item>
+        <item>SKATIES- DVIELIS</item>
+    </string-array>
+    <string-array name="gerbsanas">
+        <item>VELKAM APAKŠBIKSES.</item>
+        <item>VELKAM APAKŠKREKLIŅU.</item>
+        <item>VELKAM KREKLU.</item>
+        <item>VELKAM BIKSES.</item>
+        <item>VELKAM SVĀRKUS.</item>
+        <item>VELKAM BLŪZI</item>
+        <item>VELKAM ZEĶBIKSES.</item>
+        <item>VELKAM ZEĶES.</item>
+        <item>ĻOTI LABI!</item>
+        <item>ESMU GATAVS</item>
+    </string-array>
+    <string-array name="pastaiga">
+        <item>DOD ROKU,KĀPJAM LEJĀ!</item>
+        <item>ES JŪTU, VĒJŠ PŪŠ.</item>
+        <item>KĀPJAM AUTOMAŠĪNĀ.</item>
+        <item>SĒDIES!</item>
+        <item>SKATIES PA LOGU!</item>
+        <item>RE KĀDS PUTNS LIDO!</item>
+        <item>BRAUCAM.</item>
+        <item>SKATIES AUTOBUSS!</item>
+        <item>SKATIES UGUNSDZĒSĒJS¹</item>
+        <item>SKATIES PARKS!</item>
+        <item>SKATIES MIKROAUTOBUSS!</item>
+        <item>KĀPSIM ĀRĀ.</item>
+        <item>IESIM UZ SKOLU.</item>
+    </string-array>
+    <string-array name="skola">
+        <item>EJAM UZ SKOLU.</item>
+        <item>KĀPJAM AUGŠĀ!</item>
+        <item>TE GARDEROBE, TE TAVS SKAPIS.</item>
+        <item>TE PAKARAMAIS.</item>
+        <item>NOVELKAM ZĀBAKUS, JAKU.</item>
+        <item>DRĒBES PAKARAM SKAPĪ.</item>
+        <item>ZĀBAKUS NOLIEKAM SKAPĪ.</item>
+        <item>UZVELC SANDALES.</item>
+        <item>SKATIES- KABATLAKATS KABATĀ!</item>
+        <item>SOMU ŅEM LĪDZI.</item>
+        <item>IEKLASUSIES KĀRTĪGĪ, KO SKOLOTAJA SAKA!</item>
+    </string-array>
+    <string-array name="pecpusdiena">
+        <item>NOVELKAM JAKU.</item>
+        <item>SKATIES, BIKSES NETĪRAS! (TĀDAS NEVAR VILKT.)</item>
+        <item>MAZGĀSIM.</item>
+        <item>TAD VARĒS VILKT.</item>
+        <item>EJAM ĒST!</item>
+        <item>SĒDI PIE GALDA.</item>
+        <item>SKATIES- KRĒSLS PIE GALDA.</item>
+        <item>SKATIES, ŠĶĪVIS UZ GALDA.</item>
+        <item>UZ GALDA KRĒJUMS, KARTUPEĻI, GURĶI, BIEZPIENS.</item>
+        <item>KARTUPEĻUS ĒDĪSI?</item>
+        <item>SAKI JĀ, VAI NĒ.</item>
+        <item>KRĒJUMU VAJAG?</item>
+        <item>GURĶUS ĒDĪSI?</item>
+        <item>BIEZPIENU ĒDĪSI?</item>
+        <item>GAĻU ĒDĪSI?</item>
+        <item>VAI TEV GARŠO?</item>
+        <item>JĀ, MAN GARŠO.</item>
+    </string-array>
+    <string-array name="speles">
+        <item>VARDE.</item>
+        <item>VARDE LEC.</item>
+        <item>KAKIS.</item>
+        <item>KAĶIS ĒD PIENU.</item>
+        <item>NĒ, KAĶIS DZER PIENU.</item>
+        <item>KO DZER KAĶIS?</item>
+        <item>EJAM MAZGĀT ZOBUS! </item>
+        <item>LUDZU, ZOBUBIRSTE.</item>
+        <item>LŪDZU, ZOBUPASTA.</item>
+        <item>LŪDZU KRŪZE.</item>
+        <item>DIVI TĒLI SASKRIENĀS.</item>
+        <item>PIEDOD!</item>
+    </string-array>
+    <string-array name="vakars">
+        <item>LAIKS IET GULĒT.</item>
+        <item>EJAM GULĒT!</item>
+        <item>BUČA!</item>
+        <item>AR LABU NAKTI!</item>
+    </string-array>
+    <string-array name="jauna_diena">
+        <item>LAIKS CELTIES!</item>
+        <item>ES BRAUKŠU UZ DARBU, BET TU UZ DĀRZIŅU.</item>
+        <item>ĢĒRBJAMIES- APAKŠBIKSES, APAKŠKREKLS, KREKLS, ZEĶiTES.</item>
+        <item>BIKSES SLAPJAS?</item>
+        <item>VAKAR SLAPJAS, ŠODIEN SAUSAS.</item>
+        <item>SKATIES!</item>
+        <item>VELKAM BIKSES!</item>
+        <item>BRAUCAM UZ DĀRZIŅU!</item>
+    </string-array>
+    <string-array name="pec_skolas">
+        <item>KO TU MĀCĪJIES?</item>
+        <item>ĢĒRBIES.</item>
+        <item>VISPIRMS IESIM UZ VEIKALU.</item>
+        <item>VISPIRMS AIZBRAUKSIM UZ VEIKALU, TAD UZ MĀJU.</item>
+        <item>BRAUKSIM UZ MAZO VEIKALU.</item>
+    </string-array>
+    <string-array name="likumi">
+        <item>KĀPJAM MAŠĪNĀ.</item>
+        <item>TĀ NĒ!</item>
+        <item>TU PAJAUTĀ MAN, VAI DRĪKST TO POGU SPIEST!</item>
+        <item>EJAM VEIKALĀ, PIRKSIM PIENU, SVIESTU UN MAIZI.</item>
+        <item>MANTAS ŠOREIZ NĒ!</item>
+        <item>ES NEGRIBU IET PIE LOGOPĒDA.</item>
+        <item>PIE LOGOPĒDA IR JĀIET OBLIGĀTI.</item>
+        <item>TU PALIKSI UZ IELAS?</item>
+        <item>TU MĀCIES VĀRDUS PIE LOGOPĒDA, ES MĀCOS DARBĀ.</item>
+        <item>JA TU LABI STRĀDĀSI PIE LOGOPĒDA, TAD NOPIRKŠU TEV PĀRSTEIGUMU!</item>
+        <item>TAS JĀDARA OBLIGĀTI.</item>
+    </string-array>
+    <string-array name="sarunas">
+        <item>KAMĒR TU BŪSI DĀRZIŅĀ, ES BŪŠU DARBĀ.</item>
+        <item>NEDĪDIES!</item>
+        <item>SĒDI MIERĪGI!</item>
+        <item>VELKAM SANDALES.</item>
+        <item>KLASUSIES  AR AUSĪM, KO ES TEV SAKU!</item>
+        <item>TU ESI SATRAUCIES?</item>
+        <item>TU ESI DUSMĪGS?</item>
+        <item>BEIDZAM RAUDĀT, NOMIERINIES!</item>
+    </string-array>
+    <string-array name="iedrosinajums">
+        <item>GATAVOJIES BEIGT</item>
+        <item>SILTU VAI AUKSTU DZĒRIENU?</item>
+        <item>PEĻĶĒ NEKĀP.</item>
+        <item>DZIEDAM DZIESMU.</item>
+        <item>SKAITAM DZEJOLI.</item>
+        <item>DROŠI, SKAĻĀK.</item>
+        <item>NAV VĒRTS BAIDĪTIES!</item>
+        <item>NEBAIDIES!</item>
+    </string-array>
 </resources>
