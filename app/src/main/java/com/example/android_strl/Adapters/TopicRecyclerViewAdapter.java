@@ -20,9 +20,11 @@ import java.util.List;
 public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<TopicRecyclerViewAdapter.TopicViewHolder> {
     final static String TAG = TopicRecyclerViewAdapter.class.getSimpleName();
     private List<String> topics;
+    private OnTopicListener onTopicListener;
 
-    public TopicRecyclerViewAdapter(List<String> topics) {
+    public TopicRecyclerViewAdapter(List<String> topics, OnTopicListener onTopicListener) {
         this.topics = topics;
+        this.onTopicListener = onTopicListener;
     }
 
     @NonNull
@@ -31,7 +33,7 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<TopicRecycler
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.topic_list_item, parent, false);
         Log.d(TAG, "ViewHolder created.");
-        return new TopicViewHolder(view, parent.getContext());
+        return new TopicViewHolder(view, onTopicListener);
     }
 
     @Override
@@ -44,22 +46,25 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<TopicRecycler
         return topics.size();
     }
 
-    class TopicViewHolder extends RecyclerView.ViewHolder {
-        private TextView mTopicName;
-        private Context parentContext;
+    public class TopicViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView mTopicName;
+        OnTopicListener onTopicListener;
 
-        public TopicViewHolder(@NonNull final View itemView, final Context parentContext) {
+
+        public TopicViewHolder(@NonNull final View itemView, OnTopicListener onTopicListener) {
             super(itemView);
             mTopicName = itemView.findViewById(R.id.topicTextView);
-            this.parentContext = parentContext;
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(parentContext, WordsActivity.class);
-                    intent.putExtra("TOPIC",getAdapterPosition());
-                    parentContext.startActivity(intent);
-                }
-            });
+            this.onTopicListener = onTopicListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onTopicListener.onTopicClick(getAdapterPosition());
+        }
+    }
+    // Interface between MainActivity and this adapter. To call OnClick method of MainActivity.
+    public interface OnTopicListener {
+        void onTopicClick(int position);
     }
 }
