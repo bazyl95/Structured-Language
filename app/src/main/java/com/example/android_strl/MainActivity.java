@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerViewTopics.setLayoutManager(lm);
         mAdapter = new TopicRecyclerViewAdapter(listOfTopics);
         mRecyclerViewTopics.setAdapter(mAdapter);
+        //chaaaange
         mRecyclerViewTopics.addItemDecoration(new DividerItemDecoration(mRecyclerViewTopics.getContext(), LinearLayoutManager.VERTICAL));
     }
 
