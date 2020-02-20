@@ -1,8 +1,10 @@
 package com.javabootcamp.android_strl;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -143,17 +145,24 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
      */
     @Override
     public void checkCompleted() {
-        if (currentPhraseIndex < mPhrases.size() - 1) {
-            currentPhraseIndex++;
-            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-            fragMan.beginTransaction()
-                .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                .commit();
-            fragMan.popBackStack();
-        } else {
-            Intent intent = new Intent(this, CongratsActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        Handler handler = new Handler();
+        final Context c = this;
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (currentPhraseIndex < mPhrases.size() - 1) {
+                    currentPhraseIndex++;
+                    currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+                    fragMan.beginTransaction()
+                        .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                        .commit();
+                    fragMan.popBackStack();
+                } else {
+                    Intent intent = new Intent(c, CongratsActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        }, 2000);
     }
 }

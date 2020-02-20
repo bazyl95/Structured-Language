@@ -84,31 +84,21 @@ public class OneWordFragment extends Fragment {
             switch (dragEvent){
                 case DragEvent.ACTION_DRAG_STARTED:
                     view.setVisibility(View.INVISIBLE);
-
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
                     view.setVisibility(View.VISIBLE);
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
-
                     break;
                 case DragEvent.ACTION_DRAG_EXITED:
-
                     break;
                 case DragEvent.ACTION_DROP:
-
                     if(view.getId() == R.id.word1 && v.getId() == R.id.target1){
                         target1.setText(word1.getText());
-                        word1.setVisibility(View.GONE);
-                        /*ConstraintLayout oldparent = (ConstraintLayout) view.getParent();
-                        oldparent.removeView(view);
-                        ConstraintLayout newParent = (ConstraintLayout) v;
-                        newParent.addView(view);
                         target1.setBackgroundColor(Color.parseColor("#00FF00"));
-                        i++;*/
+                        ConstraintLayout layout = (ConstraintLayout) view.getParent();
+                        layout.removeView(word1);
                         i++;
-                        target1.setBackgroundColor(Color.parseColor("#00FF00"));
-
                     }
                     if (i==1) {
                         checker.checkCompleted();
