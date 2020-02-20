@@ -1,4 +1,4 @@
-package com.example.android_strl;
+package com.javabootcamp.android_strl;
 
 import org.junit.Test;
 

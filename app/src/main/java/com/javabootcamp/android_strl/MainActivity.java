@@ -1,4 +1,4 @@
-package com.example.android_strl;
+package com.javabootcamp.android_strl;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.android_strl.Adapters.TopicRecyclerViewAdapter;
+import com.javabootcamp.android_strl.Adapters.TopicRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

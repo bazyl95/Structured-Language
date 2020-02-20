@@ -1,4 +1,4 @@
-package com.example.android_strl;
+package com.javabootcamp.android_strl;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -10,22 +10,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.android_strl.Fragments.EightWordFragment;
-import com.example.android_strl.Fragments.FiveWordFragment;
-import com.example.android_strl.Fragments.FourWordFragment;
-import com.example.android_strl.Fragments.NineWordFragment;
-import com.example.android_strl.Fragments.OneWordFragment;
-import com.example.android_strl.Fragments.SevenWordFragment;
-import com.example.android_strl.Fragments.SixWordFragment;
-import com.example.android_strl.Fragments.TenWordFragment;
-import com.example.android_strl.Fragments.ThreeWordFragment;
-import com.example.android_strl.Fragments.TwoWordFragment;
+import com.javabootcamp.android_strl.Fragments.EightWordFragment;
+import com.javabootcamp.android_strl.Fragments.FiveWordFragment;
+import com.javabootcamp.android_strl.Fragments.FourWordFragment;
+import com.javabootcamp.android_strl.Fragments.NineWordFragment;
+import com.javabootcamp.android_strl.Fragments.OneWordFragment;
+import com.javabootcamp.android_strl.Fragments.SevenWordFragment;
+import com.javabootcamp.android_strl.Fragments.SixWordFragment;
+import com.javabootcamp.android_strl.Fragments.TenWordFragment;
+import com.javabootcamp.android_strl.Fragments.ThreeWordFragment;
+import com.javabootcamp.android_strl.Fragments.TwoWordFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class WordsActivity extends AppCompatActivity {
+public class WordsActivity extends AppCompatActivity implements Checkable {
     public static String TAG = WordsActivity.class.getSimpleName();
     private int mTopicNumber;
     private List<String> mPhrases;
@@ -58,15 +58,13 @@ public class WordsActivity extends AppCompatActivity {
     /**
      * Method which is called when fragment with next word needed to be attached.
      */
-    public void nextWord() {
+    public void nextWordFragment() {
         if (currentPhraseIndex < mPhrases.size() - 1) {
             List<String> nextPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex + 1));
             fragMan.beginTransaction()
                     .replace(R.id.fragmentWords, getFragmentObject(nextPhrase.size(), nextPhrase))
                     .commit();
             currentPhraseIndex++;
-        } else {
-            // TODO: Implement calling to CongratulationsActivity and closing this activity.
         }
     }
 
@@ -134,18 +132,35 @@ public class WordsActivity extends AppCompatActivity {
      */
     private Fragment getFragmentObject(int wordAmount, List<String> words) {
         switch (wordAmount) {
-            case 1: return new OneWordFragment(words);
-            case 2: return new TwoWordFragment(words);
-            case 3: return new ThreeWordFragment(words);
-            case 4: return new FourWordFragment(words);
-            case 5: return new FiveWordFragment(words);
-            case 6: return new SixWordFragment(words);
-            case 7: return new SevenWordFragment(words);
-            case 8: return new EightWordFragment(words);
-            case 9: return new NineWordFragment(words);
-            case 10: return new TenWordFragment(words);
+            case 1: return new OneWordFragment(words, this);
+            case 2: return new TwoWordFragment(words, this);
+            case 3: return new ThreeWordFragment(words, this);
+            case 4: return new FourWordFragment(words, this);
+            case 5: return new FiveWordFragment(words, this);
+            case 6: return new SixWordFragment(words, this);
+            case 7: return new SevenWordFragment(words, this);
+            case 8: return new EightWordFragment(words, this);
+            case 9: return new NineWordFragment(words, this);
+            case 10: return new TenWordFragment(words, this);
             default:Log.d(TAG, "Cannot initialize correct fragment");
         }
         return new Fragment();
+    }
+
+    /**
+     * Method which loads next fragment, is being called from fragment when task is finished.
+     */
+    @Override
+    public void checkCompleted() {
+        if (currentPhraseIndex < mPhrases.size() - 1) {
+            currentPhraseIndex++;
+            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+            fragMan.beginTransaction()
+                .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .addToBackStack(null)
+                .commit();
+        } else {
+            // TODO: Implement calling to CongratulationsActivity and closing this activity.
+        }
     }
 }

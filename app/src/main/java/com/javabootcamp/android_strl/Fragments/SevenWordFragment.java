@@ -1,4 +1,4 @@
-package com.example.android_strl.Fragments;
+package com.javabootcamp.android_strl.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,20 +9,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.android_strl.R;
+import com.javabootcamp.android_strl.Checkable;
+import com.javabootcamp.android_strl.R;
 
 import java.util.List;
 
-public class TenWordFragment extends Fragment {
-    private final List<String> words;
+public class SevenWordFragment extends Fragment {
 
-    public TenWordFragment(List<String> words) {
+    private final List<String> words;
+    private final Checkable checker;
+
+    public SevenWordFragment(List<String> words, Checkable checker) {
         this.words = words;
+        this.checker = checker;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_ten_word, container, false);
+        return inflater.inflate(R.layout.fragment_seven_word, container, false);
     }
 }
