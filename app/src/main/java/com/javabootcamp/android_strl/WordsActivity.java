@@ -163,6 +163,6 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
                     finish();
                 }
             }
-        }, 2000);
+        }, 1000);
     }
 }

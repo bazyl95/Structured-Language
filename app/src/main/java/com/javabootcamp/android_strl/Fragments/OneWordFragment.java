@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -83,10 +82,11 @@ public class OneWordFragment extends Fragment {
 
             switch (dragEvent){
                 case DragEvent.ACTION_DRAG_STARTED:
-                    view.setVisibility(View.INVISIBLE);
+                    word1.setVisibility(View.INVISIBLE);
                     break;
                 case DragEvent.ACTION_DRAG_ENDED:
-                    view.setVisibility(View.VISIBLE);
+                    if (word1.getVisibility() != View.GONE)
+                        word1.setVisibility(View.VISIBLE);
                     break;
                 case DragEvent.ACTION_DRAG_ENTERED:
                     break;
@@ -96,13 +96,11 @@ public class OneWordFragment extends Fragment {
                     if(view.getId() == R.id.word1 && v.getId() == R.id.target1){
                         target1.setText(word1.getText());
                         target1.setBackgroundColor(Color.parseColor("#00FF00"));
-                        ConstraintLayout layout = (ConstraintLayout) view.getParent();
-                        layout.removeView(word1);
+                        word1.setVisibility(View.GONE);
                         i++;
                     }
                     if (i==1) {
                         checker.checkCompleted();
-
                     }
                     break;
             }
