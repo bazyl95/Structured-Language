@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -44,27 +45,17 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         mPhrases = getPhrases();
         currentPhrase = getPhraseAsList(mPhrases.get(0));
         currentPhraseIndex = 0;
+        ActionBar bar = getSupportActionBar();
+        bar.setTitle(Arrays.asList(getResources().getStringArray(R.array.topics)).get(mTopicNumber));
         // Initial Fragment creation
         if (savedInstanceState == null) {
             fragMan = getSupportFragmentManager();
             fragMan.beginTransaction()
                     .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
                     .commit();
+            fragMan.popBackStack();
         } else {
             // TODO: Implement retrieving saved data after destruction of activity. IF needed.
-        }
-    }
-
-    /**
-     * Method which is called when fragment with next word needed to be attached.
-     */
-    public void nextWordFragment() {
-        if (currentPhraseIndex < mPhrases.size() - 1) {
-            List<String> nextPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex + 1));
-            fragMan.beginTransaction()
-                    .replace(R.id.fragmentWords, getFragmentObject(nextPhrase.size(), nextPhrase))
-                    .commit();
-            currentPhraseIndex++;
         }
     }
 
@@ -157,10 +148,12 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
             currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
             fragMan.beginTransaction()
                 .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                .addToBackStack(null)
                 .commit();
+            fragMan.popBackStack();
         } else {
-            // TODO: Implement calling to CongratulationsActivity and closing this activity.
+            Intent intent = new Intent(this, CongratsActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }
