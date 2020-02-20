@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Strukturēta valoda</string>
+    <string name="congratsText">Ļoti labi!  Tā  tik turpināt!</string>
+    <string name="congratsButtonText">Atgriezties pie tēmam</string>
     <string-array name="topics">
         <item>Rīts</item>
         <item>Brokastis</item>
@@ -30,7 +32,7 @@
         <item>SLAUKĀM ROKAS.</item>
     </string-array>
     <string-array name="brokastis">
-        <item>EJAM BROKASTĪS!.</item>
+        <item>EJAM BROKASTĪS.</item>
         <item>SKATIES- KAS KRŪZĒ?</item>
         <item>DZĒRIENS.</item>
         <item>BĻODA.</item>
