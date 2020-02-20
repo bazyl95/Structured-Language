@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android_STRL</string>
+    <string name="app_name">Strukturēta valoda</string>
     <string-array name="topics">
         <item>Rīts</item>
         <item>Brokastis</item>
