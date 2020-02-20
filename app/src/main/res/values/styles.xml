@@ -7,5 +7,13 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="TextViewStyleWithShadow" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">#181616</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:shadowDx">15</item>
+        <item name="android:shadowDy">15</item>
+        <item name="android:shadowRadius">15</item>
+        <item name="android:shadowColor">#A9A9A9</item>
+        <item name="android:background">#EBEFA4</item>
+    </style>
 </resources>
