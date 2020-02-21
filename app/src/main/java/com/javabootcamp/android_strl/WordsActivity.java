@@ -53,7 +53,8 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         mPhrases = getPhrases();
 
         sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber) {
+        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
+            sharedPreferences.getInt(PHRASE_INDEX, -1) != mPhrases.size() -1) {
             currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
             currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
         } else {
@@ -64,26 +65,11 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         ActionBar bar = getSupportActionBar();
         bar.setTitle(Arrays.asList(getResources().getStringArray(R.array.topics)).get(mTopicNumber));
         // Initial Fragment creation
-        if (savedInstanceState != null) {
-            currentPhraseIndex = savedInstanceState.getInt(PHRASE_INDEX);
-            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-        }
         fragMan = getSupportFragmentManager();
         fragMan.beginTransaction()
                 .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
                 .commit();
         fragMan.popBackStack();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
