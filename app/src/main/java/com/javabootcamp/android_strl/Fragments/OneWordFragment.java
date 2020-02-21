@@ -24,7 +24,7 @@ public class OneWordFragment extends WordFragment {
     void setUpFragment(View v) {
         listOfWordsIds = new ArrayList<>();
         listOfWordsIds.add(R.id.oneWord1);
-
+        //COMMENT
         listOfTargetsIds = new ArrayList<>();
         listOfTargetsIds.add(R.id.oneTarget1);
 
