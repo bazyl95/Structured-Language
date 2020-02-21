@@ -48,11 +48,11 @@ public class OneWordFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        word1= view.findViewById(R.id.word1);
+        word1= view.findViewById(R.id.oneWord1);
 
 
 
-        target1 = view.findViewById(R.id.target1);
+        target1 = view.findViewById(R.id.oneTarget1);
 
         word1.setOnTouchListener(touchListener);
 
@@ -93,13 +93,14 @@ public class OneWordFragment extends Fragment {
                 case DragEvent.ACTION_DRAG_EXITED:
                     break;
                 case DragEvent.ACTION_DROP:
-                    if(view.getId() == R.id.word1 && v.getId() == R.id.target1){
+                    if(view.getId() == R.id.oneWord1 && v.getId() == R.id.oneTarget1){
                         target1.setText(word1.getText());
                         target1.setBackgroundColor(Color.parseColor("#00FF00"));
                         word1.setVisibility(View.GONE);
                         i++;
                     }
                     if (i==1) {
+                        Toast.makeText(getActivity(),"Pareizi!", Toast.LENGTH_SHORT).show();
                         checker.checkCompleted();
                     }
                     break;

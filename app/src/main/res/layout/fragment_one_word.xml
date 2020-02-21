@@ -11,7 +11,7 @@
     android:paddingBottom="16dp">
 
     <TextView
-        android:id="@+id/word1"
+        android:id="@+id/oneWord1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -21,12 +21,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/target1"
+        app:layout_constraintTop_toBottomOf="@+id/oneTarget1"
         app:layout_constraintVertical_bias="0.52"
-        tools:text="word1" />
+        tools:text="txt" />
 
     <TextView
-        android:id="@+id/target1"
+        android:id="@+id/oneTarget1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
