@@ -19,6 +19,11 @@ import java.util.Random;
 public abstract class WordFragment extends Fragment {
     private static final String TAG = "WordFragment";
 
+    /**
+     * Method where listOfWordsIds and listOfTargetsIds are being initialized differently in every fragment,
+     * that's why this method is abstract, different implementation for different fragment, but with same logic behind it
+     * @param v View - view of a whole activity
+     */
     abstract void setUpFragment(View v);
     protected final List<String> words;
     protected List<Integer> listOfWordsIds;
@@ -31,7 +36,7 @@ public abstract class WordFragment extends Fragment {
         this.words = words;
         this.checker = checker;
     }
-
+    // Initialization of touchListener.
     View.OnTouchListener touchListener = new View.OnTouchListener(){
         @Override
         public boolean onTouch(View v, MotionEvent event) {
@@ -42,7 +47,7 @@ public abstract class WordFragment extends Fragment {
         }
 
     };
-
+    // Initialization of dargListener
     View.OnDragListener dragListener = new View.OnDragListener(){
         @Override
         public boolean onDrag(View v, DragEvent event) {
@@ -72,6 +77,11 @@ public abstract class WordFragment extends Fragment {
         }
     };
 
+    /**
+     * Checks whether dropped view was dropped correctly
+     * @param v View - view which was dragged
+     * @param view View - view which was dropped
+     */
     void checkForCorrectDrop(View v, View view) {
         TextView word = (TextView) view;
         for (int j = 0; j < listOfTargetViews.size(); j++) {
@@ -86,6 +96,11 @@ public abstract class WordFragment extends Fragment {
         }
     }
 
+    /**
+     * Method returns reference to word TextView object with given id
+     * @param id int - id of searched TextView
+     * @return TextView - if found(and it meant to be found every time) returns this TextView
+     */
     protected TextView getSameIdWordView(int id) {
         for (TextView view : listOfWordViews) {
             if (view.getId() == id)
@@ -94,6 +109,11 @@ public abstract class WordFragment extends Fragment {
         return null;
     }
 
+    /**
+     * Method fills listOfWordViews with TextViews found using list of WordIds
+     * @param view View - View of whole layout of fragment
+     * @return list List<TextView> - filled list with TextViews
+     */
     protected List<TextView> getWordTextViews(View view) {
         List<TextView> list = new ArrayList<>();
         for (int id : listOfWordsIds) {
@@ -102,6 +122,11 @@ public abstract class WordFragment extends Fragment {
         return list;
     }
 
+    /**
+     * Method fills listOfTargetViews with TextViews found using list of TargetIds
+     * @param view View - View of whole layout of fragment
+     * @return list List<TextView> - filled list with TextViews
+     */
     protected List<TextView> getTargetTextViews(View view) {
         List<TextView> list = new LinkedList<>();
         for (int id : listOfTargetsIds) {
@@ -110,18 +135,29 @@ public abstract class WordFragment extends Fragment {
         return list;
     }
 
+    /**
+     * Method assigns to all element in listOfWordViews with passed onTouchListener
+     * @param listener - onTouchListener initialized in this class.
+     */
     protected void setOnTouchListeners(View.OnTouchListener listener) {
         for (TextView view : listOfWordViews) {
             view.setOnTouchListener(listener);
         }
     }
 
+    /**
+     * Method assigns to all element in listOfTargetViews with passed onDragListener
+     * @param listener - onDragListener initialized in this class.
+     */
     protected void setOnDragListenets(View.OnDragListener listener) {
         for (TextView view : listOfTargetViews) {
             view.setOnDragListener(listener);
         }
     }
 
+    /**
+     * Method randomly assigns values to elements of listOfWordsViews from given to class list of words.
+     */
     protected void setWordsRandomly() {
         List<String> copyOfWords = new ArrayList<>(words);
         List<String> randomWords = new ArrayList<>();
