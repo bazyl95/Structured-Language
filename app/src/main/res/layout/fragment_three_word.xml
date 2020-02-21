@@ -58,40 +58,39 @@
         android:id="@+id/threeWord1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/threeTarget1" />
+        app:layout_constraintTop_toBottomOf="@+id/threeTarget1"
+        tools:text="txt" />
 
     <TextView
         android:id="@+id/threeWord2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/threeTarget2" />
+        app:layout_constraintTop_toBottomOf="@+id/threeTarget2"
+        tools:text="txt" />
 
     <TextView
         android:id="@+id/threeWord3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/threeTarget3" />
+        app:layout_constraintTop_toBottomOf="@+id/threeTarget3"
+        tools:text="txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

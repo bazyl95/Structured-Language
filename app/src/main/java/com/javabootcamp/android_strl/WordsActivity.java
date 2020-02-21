@@ -2,14 +2,17 @@ package com.javabootcamp.android_strl;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -29,12 +32,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WordsActivity extends AppCompatActivity implements Checkable {
-    public static String TAG = WordsActivity.class.getSimpleName();
+    public static final String TAG = WordsActivity.class.getSimpleName();
+    private static final String TOPIC_INDEX = "TOPIC_INDEX";
+    private static final String PHRASE_INDEX = "PHRASE_INDEX";
     private int mTopicNumber;
     private List<String> mPhrases;
     private int currentPhraseIndex;
     private FragmentManager fragMan;
     private List<String> currentPhrase;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,20 +51,48 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         mTopicNumber = intent.getIntExtra(MainActivity.TOPIC_INDEX, -1);
         // Getting all phrases for particular chosen topic.
         mPhrases = getPhrases();
-        currentPhrase = getPhraseAsList(mPhrases.get(0));
-        currentPhraseIndex = 0;
+
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber) {
+            currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
+            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+        } else {
+            currentPhrase = getPhraseAsList(mPhrases.get(0));
+            currentPhraseIndex = 0;
+        }
+
         ActionBar bar = getSupportActionBar();
         bar.setTitle(Arrays.asList(getResources().getStringArray(R.array.topics)).get(mTopicNumber));
         // Initial Fragment creation
-        if (savedInstanceState == null) {
-            fragMan = getSupportFragmentManager();
-            fragMan.beginTransaction()
-                    .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                    .commit();
-            fragMan.popBackStack();
-        } else {
-            // TODO: Implement retrieving saved data after destruction of activity. IF needed.
+        if (savedInstanceState != null) {
+            currentPhraseIndex = savedInstanceState.getInt(PHRASE_INDEX);
+            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
         }
+        fragMan = getSupportFragmentManager();
+        fragMan.beginTransaction()
+                .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .commit();
+        fragMan.popBackStack();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(PHRASE_INDEX, currentPhraseIndex);
+        editor.putInt(TOPIC_INDEX, mTopicNumber);
+        editor.commit();
     }
 
     /**
