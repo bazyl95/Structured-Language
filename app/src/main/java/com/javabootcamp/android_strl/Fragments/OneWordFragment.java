@@ -56,11 +56,11 @@ public class OneWordFragment extends Fragment {
 
         word1.setOnTouchListener(touchListener);
 
-
         target1.setOnDragListener(dragListener);
 
 
         word1.setText(words.get(0));
+
     }
 
     View.OnTouchListener touchListener = new View.OnTouchListener(){
