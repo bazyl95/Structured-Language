@@ -18,9 +18,11 @@ import org.junit.runners.MethodSorters;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.*;
 
 /**
@@ -62,8 +64,13 @@ public class ExampleInstrumentedTest {
                 .perform(click())               // click() is a ViewAction
                 .check(matches(isDisplayed())); //
 
-        onView(withId(R.id.fragmentWords))
-                .perform(ViewActions.swipeUp());
+       // onView(withId(R.id.fragmentWords))
+        //        .perform(ViewActions.swipeUp());
+
+       // onView(withId(R.id.oneWord1)).perform(typeText("LABRĪT"));
+       // onView(withId(R.id.greet_button)).perform(click());
+      // onView(withText("LABRĪT!")).check(matches(isDisplayed()));
+
 
         try {
             Thread.sleep(800);
