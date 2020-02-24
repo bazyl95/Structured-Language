@@ -45,11 +45,10 @@ public class ExampleInstrumentedTest {
 
     @Rule
     public ActivityTestRule<MainActivity> topicActivityTestRule = new ActivityTestRule<>(MainActivity.class);
-    //  @Rule
-    //   public ActivityTestRule<MainActivity> topicActivityTestRuleFirst = new ActivityTestRule<>(MainActivity.class);
 
 
-    @Test
+
+/*    @Test
     public void clickOnMainScreenRecycledViewFirstChoice() {
 
 
@@ -62,14 +61,8 @@ public class ExampleInstrumentedTest {
 
        onView(withId(R.id.fragmentWords))            // withId(R.id.my_view) is a ViewMatcher
                 .perform(click())               // click() is a ViewAction
-                .check(matches(isDisplayed())); //
+                .check(matches(isDisplayed()));
 
-       // onView(withId(R.id.fragmentWords))
-        //        .perform(ViewActions.swipeUp());
-
-       // onView(withId(R.id.oneWord1)).perform(typeText("LABRĪT"));
-       // onView(withId(R.id.greet_button)).perform(click());
-      // onView(withText("LABRĪT!")).check(matches(isDisplayed()));
 
 
         try {
@@ -78,7 +71,7 @@ public class ExampleInstrumentedTest {
             e.printStackTrace();
         }
     }
-
+*/
 
     @Test
     public void clickOnMainScreenRecycledView() {
