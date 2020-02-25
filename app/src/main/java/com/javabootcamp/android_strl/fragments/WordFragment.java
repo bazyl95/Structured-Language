@@ -1,7 +1,6 @@
 package com.javabootcamp.android_strl.fragments;
 
 import android.content.ClipData;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.javabootcamp.android_strl.Checkable;
+import com.javabootcamp.android_strl.R;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -87,7 +87,7 @@ public abstract class WordFragment extends Fragment {
         for (int j = 0; j < listOfTargetViews.size(); j++) {
             if(word.getText().equals(words.get(j)) && v.getId() == listOfTargetsIds.get(j)) {
                 listOfTargetViews.get(j).setText(word.getText());
-                listOfTargetViews.get(j).setBackgroundColor(Color.parseColor("#00FF00"));
+                listOfTargetViews.get(j).setBackgroundResource(R.drawable.rounded_target_complete);
                 getSameIdWordView(word.getId()).setVisibility(View.GONE);
                 listOfTargetViews.remove(j);
                 words.remove(j);

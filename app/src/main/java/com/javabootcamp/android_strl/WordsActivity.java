@@ -45,6 +45,13 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
     private List<String> currentPhrase;
     private SharedPreferences sharedPreferences;
     private MediaPlayer player;
+    public boolean active;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        active = true;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -165,14 +172,16 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (currentPhraseIndex < mPhrases.size() - 1) {
-                    currentPhraseIndex++;
-                    currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-                    nextFragment();
-                } else {
-                    Intent intent = new Intent(c, CongratsActivity.class);
-                    startActivity(intent);
-                    finish();
+                if (WordsActivity.this.active) {
+                    if (currentPhraseIndex < mPhrases.size() - 1) {
+                        currentPhraseIndex++;
+                        currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+                        nextFragment();
+                    } else {
+                        Intent intent = new Intent(c, CongratsActivity.class);
+                        startActivity(intent);
+                        WordsActivity.this.finish();
+                    }
                 }
             }
         }, delay);
@@ -262,5 +271,6 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
             player.release();
             player = null;
         }
+        active = false;
     }
 }

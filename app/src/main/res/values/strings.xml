@@ -3,6 +3,8 @@
     <string name="congratsText"> <br>Ļoti labi! </br> <br>Tā  tik turpināt!</br>
 
     </string>
+    <string name="word_text">word</string>
+    <string name="target_text">________</string>
     <string name="congratsButtonText">Atgriezties pie tēmam</string>
     <string-array name="topics">
         <item>Rīts</item>
