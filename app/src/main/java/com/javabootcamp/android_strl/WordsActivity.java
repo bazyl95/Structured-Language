@@ -4,28 +4,31 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.javabootcamp.android_strl.Fragments.EightWordFragment;
-import com.javabootcamp.android_strl.Fragments.FiveWordFragment;
-import com.javabootcamp.android_strl.Fragments.FourWordFragment;
-import com.javabootcamp.android_strl.Fragments.NineWordFragment;
-import com.javabootcamp.android_strl.Fragments.OneWordFragment;
-import com.javabootcamp.android_strl.Fragments.SevenWordFragment;
-import com.javabootcamp.android_strl.Fragments.SixWordFragment;
-import com.javabootcamp.android_strl.Fragments.TenWordFragment;
-import com.javabootcamp.android_strl.Fragments.ThreeWordFragment;
-import com.javabootcamp.android_strl.Fragments.TwoWordFragment;
+import com.javabootcamp.android_strl.externalModel.Corpus;
+import com.javabootcamp.android_strl.fragments.EightWordFragment;
+import com.javabootcamp.android_strl.fragments.FiveWordFragment;
+import com.javabootcamp.android_strl.fragments.FourWordFragment;
+import com.javabootcamp.android_strl.fragments.NineWordFragment;
+import com.javabootcamp.android_strl.fragments.OneWordFragment;
+import com.javabootcamp.android_strl.fragments.SevenWordFragment;
+import com.javabootcamp.android_strl.fragments.SixWordFragment;
+import com.javabootcamp.android_strl.fragments.TenWordFragment;
+import com.javabootcamp.android_strl.fragments.ThreeWordFragment;
+import com.javabootcamp.android_strl.fragments.TwoWordFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +44,7 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
     private FragmentManager fragMan;
     private List<String> currentPhrase;
     private SharedPreferences sharedPreferences;
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,36 +53,21 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
 
         Intent intent = getIntent();
         mTopicNumber = intent.getIntExtra(MainActivity.TOPIC_INDEX, -1);
-        // Getting all phrases for particular chosen topic.
-        mPhrases = getPhrases();
-
-        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
-            sharedPreferences.getInt(PHRASE_INDEX, -1) != mPhrases.size() -1) {
-            currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
-            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-        } else {
-            currentPhrase = getPhraseAsList(mPhrases.get(0));
-            currentPhraseIndex = 0;
-        }
-
         ActionBar bar = getSupportActionBar();
         bar.setTitle(Arrays.asList(getResources().getStringArray(R.array.topics)).get(mTopicNumber));
-        // Initial Fragment creation
-        fragMan = getSupportFragmentManager();
-        fragMan.beginTransaction()
-                .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                .commit();
-        fragMan.popBackStack();
+        if (mTopicNumber < 13) {
+            prepareStaticPhrases();
+        } else {
+            prepareDynamicPhrases();
+        }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(PHRASE_INDEX, currentPhraseIndex);
-        editor.putInt(TOPIC_INDEX, mTopicNumber);
-        editor.commit();
+    void prepareStaticPhrases() {
+        // Getting all phrases for particular chosen topic.
+        mPhrases = getPhrases();
+        getSavedProgress();
+        // Initial Fragment creation
+        addFragment();
     }
 
     /**
@@ -167,22 +156,111 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
     public void checkCompleted() {
         Handler handler = new Handler();
         final Context c = this;
+        int delay = 2000;
+        if (mTopicNumber < 13) {
+            player = MediaPlayer.create(c, getAudioId());
+        delay += player.getDuration();
+            player.start();
+        }
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (currentPhraseIndex < mPhrases.size() - 1) {
                     currentPhraseIndex++;
                     currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-                    fragMan.beginTransaction()
-                        .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                        .commit();
-                    fragMan.popBackStack();
+                    nextFragment();
                 } else {
                     Intent intent = new Intent(c, CongratsActivity.class);
                     startActivity(intent);
                     finish();
                 }
             }
-        }, 1000);
+        }, delay);
+    }
+
+    /**
+     * Method returns id of a resource from raw package.
+     * @return int - Identifier of audio resource assigned to current topic and phrase
+     */
+    private int getAudioId() {
+        String fileName = "topic" + mTopicNumber + "phrase" + currentPhraseIndex;
+        return getResources().getIdentifier(
+                fileName,
+                "raw",
+                WordsActivity.this.getPackageName()
+        );
+    }
+
+    private void prepareDynamicPhrases() {
+        if (isNetworkAvailable()) {
+            Corpus corpus = new Corpus(this);
+            corpus.preparePhrases();
+            Toast.makeText(this, "Fetching phrases from web.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()){
+            isAvailable = true;
+        }
+        else {
+            Toast.makeText(this, "Network is not available",
+                    Toast.LENGTH_LONG).show();
+        }
+        return isAvailable;
+    }
+
+    public void getSavedProgress() {
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
+                sharedPreferences.getInt(PHRASE_INDEX, -1) != mPhrases.size() - 1) {
+            currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
+            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+        } else {
+            currentPhrase = getPhraseAsList(mPhrases.get(0));
+            currentPhraseIndex = 0;
+        }
+    }
+
+    public void setPhrases(List<String> phrases) {
+        mPhrases = phrases;
+    }
+
+    public void addFragment() {
+        fragMan = getSupportFragmentManager();
+        fragMan.beginTransaction()
+                .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .commit();
+        fragMan.popBackStack();
+    }
+
+    public void nextFragment() {
+        fragMan.beginTransaction()
+                .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .commit();
+        fragMan.popBackStack();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (sharedPreferences != null ) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt(PHRASE_INDEX, currentPhraseIndex);
+            editor.putInt(TOPIC_INDEX, mTopicNumber);
+            editor.apply();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (player != null) {
+            player.release();
+            player = null;
+        }
     }
 }

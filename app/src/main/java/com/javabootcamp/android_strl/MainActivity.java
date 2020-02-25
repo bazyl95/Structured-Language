@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.javabootcamp.android_strl.Adapters.TopicRecyclerViewAdapter;
+import com.javabootcamp.android_strl.adapters.TopicRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

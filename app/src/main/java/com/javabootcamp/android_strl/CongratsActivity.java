@@ -15,8 +15,10 @@ public class CongratsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_congrats);
         ActionBar bar = getSupportActionBar();
-        bar.hide();
-        button = (Button) findViewById(R.id.congratsButton);
+        if (bar != null) {
+            bar.hide();
+        }
+        button = findViewById(R.id.congratsButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
