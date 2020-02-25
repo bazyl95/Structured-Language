@@ -18,9 +18,11 @@ import org.junit.runners.MethodSorters;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.*;
 
 /**
@@ -43,11 +45,10 @@ public class ExampleInstrumentedTest {
 
     @Rule
     public ActivityTestRule<MainActivity> topicActivityTestRule = new ActivityTestRule<>(MainActivity.class);
-    //  @Rule
-    //   public ActivityTestRule<MainActivity> topicActivityTestRuleFirst = new ActivityTestRule<>(MainActivity.class);
 
 
-    @Test
+
+/*    @Test
     public void clickOnMainScreenRecycledViewFirstChoice() {
 
 
@@ -60,10 +61,9 @@ public class ExampleInstrumentedTest {
 
        onView(withId(R.id.fragmentWords))            // withId(R.id.my_view) is a ViewMatcher
                 .perform(click())               // click() is a ViewAction
-                .check(matches(isDisplayed())); //
+                .check(matches(isDisplayed()));
 
-        onView(withId(R.id.fragmentWords))
-                .perform(ViewActions.swipeUp());
+
 
         try {
             Thread.sleep(800);
@@ -71,7 +71,7 @@ public class ExampleInstrumentedTest {
             e.printStackTrace();
         }
     }
-
+*/
 
     @Test
     public void clickOnMainScreenRecycledView() {
