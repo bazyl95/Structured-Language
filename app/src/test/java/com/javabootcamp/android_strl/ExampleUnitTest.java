@@ -5,8 +5,8 @@ import android.view.MenuItem;
 
 //import androidx.test.rule.ActivityTestRule;
 
-import com.javabootcamp.android_strl.Adapters.TopicRecyclerViewAdapter;
-import com.javabootcamp.android_strl.ExternalDb.Corpus;
+import com.javabootcamp.android_strl.adapters.TopicRecyclerViewAdapter;
+import com.javabootcamp.android_strl.externalModel.Corpus;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,16 +27,12 @@ public class ExampleUnitTest {
 
     @Test
     public void ExternalDB_Corpus_searchName_getResult() {
-        assertFalse(Corpus.searchName("skola").isEmpty());
+
     }
 
     @Test
     public void ExternalDB_Corpus_searchName_throwExceptionForEmpty() {
-        try {
-            List<String> list = Corpus.searchName("");
-        } catch (NullPointerException ex) {
-            assertTrue(ex instanceof NullPointerException);
-        }
+
     }
 
 
