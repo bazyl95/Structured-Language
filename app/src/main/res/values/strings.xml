@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Strukturēta valoda</string>
-    <string name="congratsText">Ļoti labi!  Tā  tik turpināt!</string>
+    <string name="congratsText"> <br>Ļoti labi! </br> <br>Tā  tik turpināt!</br>
+
+    </string>
     <string name="congratsButtonText">Atgriezties pie tēmam</string>
     <string-array name="topics">
         <item>Rīts</item>
