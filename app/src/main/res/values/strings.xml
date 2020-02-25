@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Strukturēta valoda</string>
-    <string name="congratsText">Ļoti labi!  Tā  tik turpināt!</string>
+    <string name="congratsText"> <br>Ļoti labi! </br> <br>Tā  tik turpināt!</br>
+
+    </string>
     <string name="congratsButtonText">Atgriezties pie tēmam</string>
     <string-array name="topics">
         <item>Rīts</item>
@@ -88,7 +90,7 @@
         <item>UZVELC SANDALES.</item>
         <item>SKATIES- KABATLAKATS KABATĀ!</item>
         <item>SOMU ŅEM LĪDZI.</item>
-        <item>IEKLAUSIES KĀRTĪGI, KO SKOLOTAJA SAKA!</item>
+        <item>IEKLAUSIES KĀRTĪGI, KO SKOLOTĀJA SAKA!</item>
     </string-array>
     <string-array name="pecpusdiena">
         <item>NOVELKAM JAKU.</item>
@@ -132,7 +134,7 @@
     <string-array name="jauna_diena">
         <item>LAIKS CELTIES!</item>
         <item>ES BRAUKŠU UZ DARBU, BET TU UZ DĀRZIŅU.</item>
-        <item>ĢĒRBJAMIES- APAKŠBIKSES, APAKŠKREKLS, KREKLS, ZEĶES.</item>
+        <item>ĢĒRBJAMIES- APAKŠBIKSES, APAKŠKREKLS, KREKLS, ZEĶĪTES.</item>
         <item>BIKSES SLAPJAS?</item>
         <item>VAKAR SLAPJAS, ŠODIEN SAUSAS.</item>
         <item>SKATIES!</item>

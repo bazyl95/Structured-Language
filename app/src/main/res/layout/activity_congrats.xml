@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animationCache="false"
     android:background="#5EC548">
 
     <TextView
@@ -12,24 +13,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:background="#EBEFA4"
+        android:background="#5EC548"
         android:text="@string/congratsText"
-        android:textColor="#181616"
-        android:textSize="44sp"
+        android:textColor="#F3EDED"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998" />
+        app:layout_constraintVertical_bias="0.713" />
 
     <Button
         android:id="@+id/congratsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#E99CE8ED"
+        android:layout_width="246dp"
+        android:layout_height="66dp"
+        android:background="@drawable/rounded_button"
         android:text="@string/congratsButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/congratstextView"
         app:layout_constraintStart_toStartOf="@+id/congratstextView"
         app:layout_constraintTop_toBottomOf="@+id/congratstextView" />
+
+    <ImageView
+        android:id="@+id/check_sign"
+        android:layout_width="159dp"
+        android:layout_height="147dp"
+
+        android:background="@drawable/ic_launchercheck"
+        android:contentDescription="@string/app_name"
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="26dp">
+
+    </ImageView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
