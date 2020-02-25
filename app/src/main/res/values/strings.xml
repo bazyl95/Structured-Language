@@ -36,7 +36,7 @@
         <item>SKATIES- KAS KRŪZĒ?</item>
         <item>DZĒRIENS.</item>
         <item>BĻODA.</item>
-        <item>KAS BĻODA?</item>
+        <item>KAS BĻODĀ?</item>
         <item>TUKŠS.</item>
         <item>KAROTE.</item>
         <item>TE KATLS.</item>
@@ -87,7 +87,7 @@
         <item>UZVELC SANDALES.</item>
         <item>SKATIES- KABATLAKATS KABATĀ!</item>
         <item>SOMU ŅEM LĪDZI.</item>
-        <item>IEKLASUSIES KĀRTĪGĪ, KO SKOLOTAJA SAKA!</item>
+        <item>IEKLAUSIES KĀRTĪGI, KO SKOLOTAJA SAKA!</item>
     </string-array>
     <string-array name="pecpusdiena">
         <item>NOVELKAM JAKU.</item>
@@ -119,7 +119,7 @@
         <item>LUDZU, ZOBUBIRSTE.</item>
         <item>LŪDZU, ZOBUPASTA.</item>
         <item>LŪDZU KRŪZE.</item>
-        <item>DIVI TĒLI SASKRIENĀS.</item>
+        <item>DIVI TĒLI SASKRIENAS.</item>
         <item>PIEDOD!</item>
     </string-array>
     <string-array name="vakars">
@@ -131,7 +131,7 @@
     <string-array name="jauna_diena">
         <item>LAIKS CELTIES!</item>
         <item>ES BRAUKŠU UZ DARBU, BET TU UZ DĀRZIŅU.</item>
-        <item>ĢĒRBJAMIES- APAKŠBIKSES, APAKŠKREKLS, KREKLS, ZEĶiTES.</item>
+        <item>ĢĒRBJAMIES- APAKŠBIKSES, APAKŠKREKLS, KREKLS, ZEĶES.</item>
         <item>BIKSES SLAPJAS?</item>
         <item>VAKAR SLAPJAS, ŠODIEN SAUSAS.</item>
         <item>SKATIES!</item>
@@ -173,7 +173,7 @@
         <item>SILTU VAI AUKSTU DZĒRIENU?</item>
         <item>PEĻĶĒ NEKĀP.</item>
         <item>DZIEDAM DZIESMU.</item>
-        <item>SKAITAM DZEJOLI.</item>
+        <item>SKAITĀM DZEJOLI.</item>
         <item>DROŠI, SKAĻĀK.</item>
         <item>NAV VĒRTS BAIDĪTIES!</item>
         <item>NEBAIDIES!</item>
