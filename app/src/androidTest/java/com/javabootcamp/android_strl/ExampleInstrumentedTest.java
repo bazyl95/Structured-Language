@@ -1,33 +1,20 @@
 package com.javabootcamp.android_strl;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.Instrumentation;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Looper;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
 
-//import androidx.fragment.app.Fragment;
-//import androidx.fragment.app.FragmentManager;
+
 import androidx.test.InstrumentationRegistry;
-import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.contrib.RecyclerViewActions;
-import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import androidx.test.runner.lifecycle.Stage;
-
-import com.javabootcamp.android_strl.fragments.OneWordFragment;
-import com.javabootcamp.android_strl.fragments.WordFragment;
-
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
@@ -37,21 +24,15 @@ import org.junit.runners.MethodSorters;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
-import static java.security.AccessController.getContext;
 import static org.hamcrest.core.AllOf.allOf;
-import static org.hamcrest.core.StringEndsWith.endsWith;
-import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 
 /**
@@ -77,13 +58,6 @@ public class ExampleInstrumentedTest {
     @Rule
     public ActivityTestRule<MainActivity> topicActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
-  //  @Rule
-  //  public IntentsTestRule<MainActivity> intentsTestRuleMain =
-        //    new IntentsTestRule<>(MainActivity.class);
-
-
-    //@Rule
-    // public ActivityTestRule<WordsActivity> wordsActivityTestRule = new ActivityTestRule<>(WordsActivity.class);
 
     @Test
     public void testRecycledListView() {
