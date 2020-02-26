@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         style="@style/wordStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenWord7"
+        app:layout_constraintEnd_toStartOf="@id/tenWord9"
         app:layout_constraintTop_toBottomOf="@+id/tenTarget8"
         app:layout_constraintVertical_bias="0.64" />
 
@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         style="@style/wordStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenWord8"
+        app:layout_constraintEnd_toStartOf="@id/tenWord10"
         app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tenTarget9"
         app:layout_constraintVertical_bias="0.64" />
 
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenWord9"
         app:layout_constraintTop_toBottomOf="@+id/tenTarget10"
         app:layout_constraintVertical_bias="0.64" />
 
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         style="@style/wordStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tenWord7"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintTop_toBottomOf="@+id/tenTarget6"
         app:layout_constraintVertical_bias="0.64" />
 
@@ -63,9 +63,9 @@
         android:layout_height="wrap_content"
         style="@style/wordStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenWord6"
+        app:layout_constraintEnd_toStartOf="@id/tenWord8"
         app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tenTarget7"
         app:layout_constraintVertical_bias="0.64" />
 
@@ -135,9 +135,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tenTarget7"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintTop_toBottomOf="@id/tenTarget1"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -147,9 +147,9 @@
         android:layout_height="wrap_content"
         style="@style/targetStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenTarget6"
+        app:layout_constraintEnd_toStartOf="@id/tenTarget8"
         app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tenTarget2"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -159,8 +159,8 @@
         android:layout_height="wrap_content"
         style="@style/targetStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenTarget7"
+        app:layout_constraintEnd_toStartOf="@id/tenTarget9"
         app:layout_constraintTop_toBottomOf="@id/tenTarget3"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -170,9 +170,9 @@
         android:layout_height="wrap_content"
         style="@style/targetStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tenTarget8"
+        app:layout_constraintEnd_toStartOf="@id/tenTarget10"
         app:layout_constraintHorizontal_bias="0.71"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tenTarget4"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -184,8 +184,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tenTarget5"
+        app:layout_constraintStart_toEndOf="@id/tenTarget9"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView

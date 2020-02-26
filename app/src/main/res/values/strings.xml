@@ -18,7 +18,7 @@
         <item>Jauna diena</item>
         <item>Pēc skolas</item>
         <item>Likumi</item>
-        <item>Saruna</item>
+        <item>Sarunas</item>
         <item>Iedrošinājums</item>
         <item>Dinamiska frāze</item>
     </string-array>
@@ -75,7 +75,7 @@
         <item>RE KĀDS PUTNS LIDO!</item>
         <item>BRAUCAM.</item>
         <item>SKATIES AUTOBUSS!</item>
-        <item>SKATIES UGUNSDZĒSĒJS¹</item>
+        <item>SKATIES UGUNSDZĒSĒJS</item>
         <item>SKATIES PARKS!</item>
         <item>SKATIES MIKROAUTOBUSS!</item>
         <item>KĀPSIM ĀRĀ.</item>
@@ -116,7 +116,7 @@
     <string-array name="speles">
         <item>VARDE.</item>
         <item>VARDE LEC.</item>
-        <item>KAKIS.</item>
+        <item>KAĶIS.</item>
         <item>KAĶIS ĒD PIENU.</item>
         <item>NĒ, KAĶIS DZER PIENU.</item>
         <item>KO DZER KAĶIS?</item>

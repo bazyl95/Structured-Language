@@ -69,11 +69,13 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         }
     }
 
+    /**
+     * Method sets up everything with static phrases from strings.xml file.
+     */
     void prepareStaticPhrases() {
         // Getting all phrases for particular chosen topic.
         mPhrases = getPhrases();
         getSavedProgress();
-        // Initial Fragment creation
         addFragment();
     }
 
@@ -200,6 +202,9 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         );
     }
 
+    /**
+     * Method is initializing new Corpus object if network is available.
+     */
     private void prepareDynamicPhrases() {
         if (isNetworkAvailable()) {
             Corpus corpus = new Corpus(this);
@@ -208,6 +213,10 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         }
     }
 
+    /**
+     * Method check if network is available on the phone.
+     * @return boolean - result of the check.
+     */
     private boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
@@ -222,6 +231,10 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         return isAvailable;
     }
 
+    /**
+     * Method is retrieving instance of SharedPreferences and checks if last used topicIndex is the same
+     * or if it's not, then just initializing fields with 0 index.
+     */
     public void getSavedProgress() {
         sharedPreferences = getPreferences(Context.MODE_PRIVATE);
         if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
@@ -234,10 +247,17 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         }
     }
 
+    /**
+     * Public interface to set phrases.
+     * @param phrases List<String> - List of given phrases
+     */
     public void setPhrases(List<String> phrases) {
         mPhrases = phrases;
     }
 
+    /**
+     * Method adds new fragment using currentPhrase.
+     */
     public void addFragment() {
         fragMan = getSupportFragmentManager();
         fragMan.beginTransaction()
@@ -246,6 +266,9 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
         fragMan.popBackStack();
     }
 
+    /**
+     * Method replaces current fragment with new one using currentPhrase.
+     */
     public void nextFragment() {
         fragMan.beginTransaction()
                 .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
