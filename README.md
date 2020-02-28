@@ -8,6 +8,7 @@ In one of the topics "Dinamiska frāze", phrases are fetched from the WEB databa
 Project is useful for kids who has problems with constructing proper sentences, or issues with speech.
 
 To get started to modify the project, just investigate the structure of project, it not huge just few files, most of methods have comments explaining what they are doing.
+Detailed information about it's structure and content can be found in DOCUMENTATION file.
 For getting more info (in Latvian) about the WEB database:
 
 Main site with different databases, in project was used LVK2018.
