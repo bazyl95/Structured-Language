@@ -11,23 +11,23 @@ To get started to modify the project, just investigate the structure of project,
 Detailed information about it's structure and content can be found in DOCUMENTATION file.
 For getting more info (in Latvian) about the WEB database:
 
-**Main site with different databases, in project was used LVK2018.
+Main site with different databases, in project was used LVK2018.
 
 http://www.korpuss.lv/id/LVTB
 
-**Documentation about database.
+Documentation about database.
 
 https://www.apgads.lu.lv/fileadmin/user_upload/lu_portal/apgads/PDF/Valoda-nozime-forma/VNF-10/vnf_10-12_Levane_Petrova.pdf
 
-**How can you search in this database.
+How can you search in this database.
 
 http://www.clarin.lv/attachments/LVK2018_meklesana.pdf
 
-**Different regular expression elements you can use.
+Different regular expression elements you can use.
 
 http://www.clarin.lv/attachments/27042018reg_izt.pdf
 
-**Initial project was made by: 
+Initial project was made by: 
 Ieva G.
 Vasilijs M.
 Roberts P.
