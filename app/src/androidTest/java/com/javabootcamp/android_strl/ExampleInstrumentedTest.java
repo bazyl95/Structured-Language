@@ -94,13 +94,8 @@ public class ExampleInstrumentedTest {
             onView(withId(R.id.fragmentWords)).check(matches(isDisplayed()));
             onView(withId(R.id.fragmentWords));
 
-            FragmentManager fragmentManager = getActivityInstance().getFragmentManager();
-            Fragment fr = (Fragment)fragmentManager.getFragments().get(0);
             onView(allOf(withId(R.id.fragmentWords), withText("EJAM, BROKASTĪS.")));
 
-            Log.i("-----------currentFragmentCountXXXXXXXXXXXXXXx",fr.toString());
-
-            Log.i("-----------currentFragmentCountXXXXXXXXXXXXXXx",Integer.toString(fragmentManager.getFragments().size()));
 
 
 
