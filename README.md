@@ -19,7 +19,7 @@ Documentation about database.
 
 https://www.apgads.lu.lv/fileadmin/user_upload/lu_portal/apgads/PDF/Valoda-nozime-forma/VNF-10/vnf_10-12_Levane_Petrova.pdf
 
-How can yopu search in this database.
+How can you search in this database.
 
 http://www.clarin.lv/attachments/LVK2018_meklesana.pdf
 
