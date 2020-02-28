@@ -80,6 +80,51 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
     }
 
     /**
+     * Method is retrieving instance of SharedPreferences and checks if last used topicIndex is the same
+     * or if it's not, then just initializing fields with 0 index.
+     */
+    public void getSavedProgress() {
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
+                sharedPreferences.getInt(PHRASE_INDEX, -1) != mPhrases.size() - 1) {
+            currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
+            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
+        } else {
+            currentPhrase = getPhraseAsList(mPhrases.get(0));
+            currentPhraseIndex = 0;
+        }
+    }
+
+    /**
+     * Public setter for mPhrases field.
+     * @param phrases - Passed list of phrases.
+     */
+    public void setPhrases(List<String> phrases) {
+        mPhrases = phrases;
+    }
+
+    /**
+     * Method adds new fragment using currentPhrase.
+     */
+    public void addFragment() {
+        fragMan = getSupportFragmentManager();
+        fragMan.beginTransaction()
+                .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .commit();
+        fragMan.popBackStack();
+    }
+
+    /**
+     * Method replaces current fragment with new one using currentPhrase.
+     */
+    private void nextFragment() {
+        fragMan.beginTransaction()
+                .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
+                .commit();
+        fragMan.popBackStack();
+    }
+
+    /**
      * Method sets phrases from resources for chosen topic
      * @return ArrayList <String> - List with phrases fetched from resources.
      */
@@ -229,51 +274,6 @@ public class WordsActivity extends AppCompatActivity implements Checkable {
                     Toast.LENGTH_LONG).show();
         }
         return isAvailable;
-    }
-
-    /**
-     * Method is retrieving instance of SharedPreferences and checks if last used topicIndex is the same
-     * or if it's not, then just initializing fields with 0 index.
-     */
-    public void getSavedProgress() {
-        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-        if (sharedPreferences.getInt(TOPIC_INDEX, -1) == mTopicNumber &&
-                sharedPreferences.getInt(PHRASE_INDEX, -1) != mPhrases.size() - 1) {
-            currentPhraseIndex = sharedPreferences.getInt(PHRASE_INDEX, -1);
-            currentPhrase = getPhraseAsList(mPhrases.get(currentPhraseIndex));
-        } else {
-            currentPhrase = getPhraseAsList(mPhrases.get(0));
-            currentPhraseIndex = 0;
-        }
-    }
-
-    /**
-     * Public interface to set phrases.
-     * @param phrases List<String> - List of given phrases
-     */
-    public void setPhrases(List<String> phrases) {
-        mPhrases = phrases;
-    }
-
-    /**
-     * Method adds new fragment using currentPhrase.
-     */
-    public void addFragment() {
-        fragMan = getSupportFragmentManager();
-        fragMan.beginTransaction()
-                .add(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                .commit();
-        fragMan.popBackStack();
-    }
-
-    /**
-     * Method replaces current fragment with new one using currentPhrase.
-     */
-    public void nextFragment() {
-        fragMan.beginTransaction()
-                .replace(R.id.fragmentWords, getFragmentObject(currentPhrase.size(), currentPhrase))
-                .commit();
-        fragMan.popBackStack();
     }
 
     @Override

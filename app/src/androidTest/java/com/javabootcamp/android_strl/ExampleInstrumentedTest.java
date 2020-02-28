@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.filters.LargeTest;
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
@@ -43,7 +44,7 @@ import static org.junit.Assert.*;
 
 @LargeTest // Emulation mode
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(AndroidJUnit4.class)// Android GUI Test
+@RunWith(AndroidJUnit4ClassRunner.class)// Android GUI Test
 public class ExampleInstrumentedTest {
 
     @Test

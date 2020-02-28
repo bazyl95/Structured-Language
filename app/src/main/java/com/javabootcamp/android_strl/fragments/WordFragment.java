@@ -47,7 +47,7 @@ public abstract class WordFragment extends Fragment {
         }
 
     };
-    // Initialization of dargListener
+    // Initialization of dragListener
     View.OnDragListener dragListener = new View.OnDragListener(){
         @Override
         public boolean onDrag(View v, DragEvent event) {
@@ -150,7 +150,7 @@ public abstract class WordFragment extends Fragment {
      * Method assigns to all element in listOfTargetViews with passed onDragListener
      * @param listener - onDragListener initialized in this class.
      */
-    protected void setOnDragListenets(View.OnDragListener listener) {
+    protected void setOnDragListeners(View.OnDragListener listener) {
         for (TextView view : listOfTargetViews) {
             view.setOnDragListener(listener);
         }

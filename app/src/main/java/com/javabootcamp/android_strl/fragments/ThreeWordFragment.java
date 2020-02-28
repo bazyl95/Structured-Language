@@ -37,7 +37,7 @@ public class ThreeWordFragment extends WordFragment {
         listOfTargetViews = getTargetTextViews(v);
 
         setOnTouchListeners(touchListener);
-        setOnDragListenets(dragListener);
+        setOnDragListeners(dragListener);
 
         setWordsRandomly();
     }

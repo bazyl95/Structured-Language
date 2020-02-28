@@ -1,8 +1,7 @@
 package com.javabootcamp.android_strl;
 
     /*
-    * Interface made to allow from TopicAdapter to call to method in MainActivity to start WordActivity.
-    * Management of Activities stays within activities and not adapters ... principle
+    * Interface which allows a fragment to call method of activity to trigger change of fragment
      * */
 public interface Checkable {
     public void checkCompleted();
